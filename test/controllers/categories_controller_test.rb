@@ -6,13 +6,13 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get categories_url, as: :json
+    get api_v1_categories_url, as: :json
     assert_response :success
   end
 
   test "should create category" do
     assert_difference("Category.count") do
-      post categories_url, params: { category: { name: @category.name } }, as: :json
+      post api_v1_categories_url, params: { category: { name: @category.name } }, as: :json
     end
 
     assert_response :created

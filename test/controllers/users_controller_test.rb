@@ -6,13 +6,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get users_url, as: :json
+    get api_v1_users_url, as: :json
     assert_response :success
   end
 
   test "should create user" do
     assert_difference("User.count") do
-      post users_url, params: { user: { email: @user.email, name: @user.name, password: @user.password } }, as: :json
+      post api_v1_users_url, params: { user: { email: @user.email, name: @user.name, password: @user.password } }, as: :json
     end
 
     assert_response :created
